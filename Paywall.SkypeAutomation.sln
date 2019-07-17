@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paywall.SkypeAutomation", "Paywall.SkypeAutomation\Paywall.SkypeAutomation.csproj", "{E71E80D0-A957-4EFF-A349-DC76B2ED6F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paywall.Database", "Paywall.Database\Paywall.Database.csproj", "{6CA98A70-1CD9-4FD6-B2C9-60DC12362A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paywall.Automatization", "Paywall.Automatization\Paywall.Automatization.csproj", "{6317B297-0F84-4932-8594-F01E52892FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E71E80D0-A957-4EFF-A349-DC76B2ED6F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71E80D0-A957-4EFF-A349-DC76B2ED6F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71E80D0-A957-4EFF-A349-DC76B2ED6F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71E80D0-A957-4EFF-A349-DC76B2ED6F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA98A70-1CD9-4FD6-B2C9-60DC12362A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA98A70-1CD9-4FD6-B2C9-60DC12362A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA98A70-1CD9-4FD6-B2C9-60DC12362A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA98A70-1CD9-4FD6-B2C9-60DC12362A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6317B297-0F84-4932-8594-F01E52892FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6317B297-0F84-4932-8594-F01E52892FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6317B297-0F84-4932-8594-F01E52892FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6317B297-0F84-4932-8594-F01E52892FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E71E80D0-A957-4EFF-A349-DC76B2ED6F5F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Paywall.SkypeAutomation</RootNamespace>
+    <AssemblyName>Paywall.SkypeAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Events\EventBase.cs" />
+    <Compile Include="Core\Events\EventManager.cs" />
+    <Compile Include="Core\Events\EventTrigger.cs" />
+    <Compile Include="Core\ManagerBase.cs" />
+    <Compile Include="Core\SkypeApi\SkypeAPI.cs" />
+    <Compile Include="Core\SkypeApi\SkypeConversationBase.cs" />
+    <Compile Include="Core\SkypeApi\SkypeConversionManager.cs" />
+    <Compile Include="Core\SkypeApi\SkypeMessage.cs" />
+    <Compile Include="Core\SkypeCommand\SkypeCommandBase.cs" />
+    <Compile Include="Core\SkypeCommand\SkypeCommandResultBase.cs" />
+    <Compile Include="Core\SkypeCommand\SkypeCommandSetBase.cs" />
+    <Compile Include="Core\SkypeProcess\SkypeProcessManager.cs" />
+    <Compile Include="Core\SkypeProcess\SkypeProcessResponse.cs" />
+    <Compile Include="Core\Task\TaskBase.cs" />
+    <Compile Include="Core\Task\TaskObject.cs" />
+    <Compile Include="Core\Task\TaskManager.cs" />
+    <Compile Include="Core\Task\TaskTrigger.cs" />
+    <Compile Include="Core\TriggerBase.cs" />
+    <Compile Include="Implementations\Events\EventCommunicationManager.cs" />
+    <Compile Include="Implementations\Events\EventDatabaseManager.cs" />
+    <Compile Include="Implementations\Events\Types\Database\FatalConversionsEvent.cs" />
+    <Compile Include="Implementations\Events\Types\Database\PaywallSkypeNotificationEvent.cs" />
+    <Compile Include="Implementations\Events\Types\Database\ReportConversionsEvent.cs" />
+    <Compile Include="Implementations\Events\Types\Other\TestEvent.cs" />
+    <Compile Include="Implementations\SkypeApi\Types\Automatization\SkypeAutomationConversation.cs" />
+    <Compile Include="Implementations\SkypeApi\Types\Other\AleksandarKonatarConversation.cs" />
+    <Compile Include="Implementations\SkypeApi\Types\Database\BotFatalConversation.cs" />
+    <Compile Include="Implementations\SkypeApi\Types\Database\BotReportConversation.cs" />
+    <Compile Include="Implementations\SkypeApi\SkypeConversationManagerBase.cs" />
+    <Compile Include="Implementations\SkypeCommand\AleksandarKonatarCommand.cs" />
+    <Compile Include="Implementations\SkypeCommand\DefaultCommandSet.cs" />
+    <Compile Include="Implementations\SkypeCommand\SelectCommand.cs" />
+    <Compile Include="Implementations\SkypeCommand\TestCommand.cs" />
+    <Compile Include="Implementations\Task\CommunicationTaskManager.cs" />
+    <Compile Include="Implementations\Task\AutomatizationTaskManager.cs" />
+    <Compile Include="Implementations\Task\DatabaseTaskManager.cs" />
+    <Compile Include="Implementations\Task\DefaultTask.cs" />
+    <Compile Include="Implementations\Task\TaskManager.cs" />
+    <Compile Include="Managers.cs" />
+    <Compile Include="Implementations\Events\EventManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SKYPE4COMLib">
+      <Guid>{03282B5D-B38F-469D-849A-09B0A7F4881B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paywall.Automatization\Paywall.Automatization.csproj">
+      <Project>{6317b297-0f84-4932-8594-f01e52892fb0}</Project>
+      <Name>Paywall.Automatization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paywall.Database\Paywall.Database.csproj">
+      <Project>{6ca98a70-1cd9-4fd6-b2c9-60dc12362a23}</Project>
+      <Name>Paywall.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementations\SkypeCommand\Types\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
